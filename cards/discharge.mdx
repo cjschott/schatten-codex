@@ -1,0 +1,43 @@
+---
+title: "Discharge"
+description: "SCHATTEN card SCH-NEU-03: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Discharge."
+---
+
+**Discharge** is a common neutral release card (ID `SCH-NEU-03`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 1 |
+| Cast modes | manifest |
+| Veil fuse | Not applicable |
+| Target | `none` |
+
+## Effect
+
+Consumes a Charge and deals M minus 1 damage.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Cinderbrand Staff (proto)](/items/cinderbrand-staff-proto): 1 copy
+- [Rimewood Staff](/items/rimewood-staff): 2 copies
+- [Umbral Crook (proto)](/items/umbral-crook-proto): 2 copies
+- [Prism Wand](/items/prism-wand): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-NEU-03', version: 1, name: 'Discharge', discipline: 'neutral', category: 'release', rarity: 'common',
+    cost: 1, cast_modes: ['manifest'], fuse: null, eligible: ['staff'], target: 'none',
+    effects: [
+      { op: 'charge.consume' },
+      { op: 'damage', target: 'opponent', amount: { sub: [M, 1] }, element: 'charge' },
+    ],
+    veil_bonus: [], tags: ['neutral', 'release'], schema_major: 1,
+  },
+```
+

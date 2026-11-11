@@ -1,0 +1,43 @@
+---
+title: "Glacial Lattice"
+description: "SCHATTEN card SCH-FRO-02: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Glacial Lattice."
+---
+
+**Glacial Lattice** is a common frost ward card (ID `SCH-FRO-02`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 2 |
+| Cast modes | manifest, veil |
+| Veil fuse | 1 |
+| Target | `none` |
+
+## Effect
+
+Gains 7 Ward against a Chilled opponent, otherwise 5; Veil adds 1 Ward.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Glacier Robe (proto)](/items/glacier-robe-proto): 2 copies
+- [Grey Habit (proto)](/items/grey-habit-proto): 1 copy
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-FRO-02', version: 1, name: 'Glacial Lattice', discipline: 'frost', category: 'ward', rarity: 'common',
+    cost: 2, cast_modes: ['manifest', 'veil'], fuse: 1, eligible: ['vestment'], target: 'none',
+    effects: [{
+      op: 'if', pred: { p: 'status_ge', who: 'opponent', status: 'chill', n: 1 },
+      then: [{ op: 'ward.gain', target: 'self', amount: 7 }],
+      else: [{ op: 'ward.gain', target: 'self', amount: 5 }],
+    }],
+    veil_bonus: [{ path: '0.then.0.amount', add: 1 }, { path: '0.else.0.amount', add: 1 }],
+    tags: ['frost', 'ward'], schema_major: 1,
+  },
+```
+

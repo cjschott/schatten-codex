@@ -1,0 +1,34 @@
+---
+title: "Veilwarden's Hood"
+description: "SCHATTEN prototype equipment P-HO-1: its slot, full card contributions, passive abilities, drawbacks, and validated preset usage."
+---
+
+**Veilwarden's Hood** equips in the **hood** slot (ID `P-HO-1`). It adds 3 cards to your 22-card deck.
+
+## Granted cards
+
+| Card | Copies |
+| --- | ---: |
+| [Feint](/cards/feint) | 2 |
+| [Veilshift](/cards/veilshift) | 1 |
+
+## Preset usage
+
+- [L3 Gloam Ledger](/loadouts/l3-gloam-ledger)
+
+## Stats, passive abilities and drawbacks
+
+The following verified source definition is authoritative for base-stat overrides, passive hook conditions, and any drawbacks. Empty arrays mean that no effect of that category is defined.
+
+```typescript
+{
+    id: 'P-HO-1', version: 1, name: "Veilwarden's Hood", slot: 'hood',
+    cards: [c('SCH-UMB-02', 2), c('SCH-UMB-03')],
+    base: { stat: 'slots', value: 4 },
+    passives: [],
+    drawbacks: [{ hook: 'rule.flag', name: 'show_own_veil_discipline' }],
+  },
+```
+
+<Note>Player-earned equipment, crafting, and custom loadout editing are not yet implemented in the browser prototype.</Note>
+

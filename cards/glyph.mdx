@@ -1,0 +1,41 @@
+---
+title: "Glyph"
+description: "SCHATTEN card SCH-ARC-01: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Glyph."
+---
+
+**Glyph** is a common arcane primer card (ID `SCH-ARC-01`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 1 |
+| Cast modes | manifest, veil |
+| Veil fuse | 1 |
+| Target | `none` |
+
+## Effect
+
+Creates an Arcane Charge of magnitude 2 and draws 1; Veil adds 1 magnitude.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Prism Wand](/items/prism-wand): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-ARC-01', version: 1, name: 'Glyph', discipline: 'arcane', category: 'primer', rarity: 'common',
+    cost: 1, cast_modes: ['manifest', 'veil'], fuse: 1, eligible: ['staff'], target: 'none',
+    effects: [
+      { op: 'charge.create', element: 'arcane', magnitude: 2 },
+      { op: 'draw', target: 'self', n: 1 },
+    ],
+    veil_bonus: [{ path: '0.magnitude', add: 1 }],
+    tags: ['arcane', 'primer', 'draw'], schema_major: 1,
+  },
+```
+

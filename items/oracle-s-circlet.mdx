@@ -1,0 +1,35 @@
+---
+title: "Oracle's Circlet"
+description: "SCHATTEN prototype equipment P-HO-2: its slot, full card contributions, passive abilities, drawbacks, and validated preset usage."
+---
+
+**Oracle's Circlet** equips in the **hood** slot (ID `P-HO-2`). It adds 3 cards to your 22-card deck.
+
+## Granted cards
+
+| Card | Copies |
+| --- | ---: |
+| [Scrying Eye](/cards/scrying-eye) | 2 |
+| [Stillwater](/cards/stillwater) | 1 |
+
+## Preset usage
+
+- [L2 Rime Control](/loadouts/l2-rime-control)
+- [L4 Prism Weaver](/loadouts/l4-prism-weaver)
+
+## Stats, passive abilities and drawbacks
+
+The following verified source definition is authoritative for base-stat overrides, passive hook conditions, and any drawbacks. Empty arrays mean that no effect of that category is defined.
+
+```typescript
+{
+    id: 'P-HO-2', version: 1, name: "Oracle's Circlet", slot: 'hood',
+    cards: [c('SCH-ARC-03', 2), c('SCH-FRO-07')],
+    base: { stat: 'slots', value: 2 },
+    passives: [{ hook: 'rule.flag', name: 'see_enemy_veil_discipline' }],
+    drawbacks: [],
+  },
+```
+
+<Note>Player-earned equipment, crafting, and custom loadout editing are not yet implemented in the browser prototype.</Note>
+

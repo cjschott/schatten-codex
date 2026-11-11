@@ -1,0 +1,42 @@
+---
+title: "Ember Ward"
+description: "SCHATTEN card SCH-FIR-07: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Ember Ward."
+---
+
+**Ember Ward** is a common fire reaction card (ID `SCH-FIR-07`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 1 |
+| Cast modes | veil |
+| Veil fuse | Not applicable |
+| Target | `none` |
+
+## Effect
+
+Veiled reaction to taking at least 3 damage: prevent 2 and apply 2 Burn.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Ashen Mantle](/items/ashen-mantle): 2 copies
+- [Grey Habit (proto)](/items/grey-habit-proto): 1 copy
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-FIR-07', version: 1, name: 'Ember Ward', discipline: 'fire', category: 'reaction', rarity: 'common',
+    cost: 1, cast_modes: ['veil'], fuse: null, eligible: ['vestment'], target: 'none',
+    trigger: { event: 'self.damaged', n: 3 },
+    effects: [
+      { op: 'prevent', amount: 2 },
+      { op: 'status.apply', target: 'opponent', status: 'burn', stacks: 2 },
+    ],
+    veil_bonus: [], tags: ['fire', 'reaction', 'defense'], schema_major: 1,
+  },
+```
+

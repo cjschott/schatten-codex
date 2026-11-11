@@ -1,0 +1,44 @@
+---
+title: "Immolate"
+description: "SCHATTEN card SCH-FIR-05: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Immolate."
+---
+
+**Immolate** is a common fire release card (ID `SCH-FIR-05`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 2 |
+| Cast modes | manifest |
+| Veil fuse | Not applicable |
+| Target | `none` |
+
+## Effect
+
+Releases your Charge for M damage and applies 2 Burn if its element is Fire.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Cinderbrand Staff (proto)](/items/cinderbrand-staff-proto): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-FIR-05', version: 1, name: 'Immolate', discipline: 'fire', category: 'release', rarity: 'common',
+    cost: 2, cast_modes: ['manifest'], fuse: null, eligible: ['staff'], target: 'none',
+    effects: [
+      { op: 'charge.consume' },
+      { op: 'damage', target: 'opponent', amount: M, element: 'charge' },
+      {
+        op: 'if', pred: { p: 'charge_element_is', element: 'fire' },
+        then: [{ op: 'status.apply', target: 'opponent', status: 'burn', stacks: 2 }],
+      },
+    ],
+    veil_bonus: [], tags: ['fire', 'release', 'burn'], schema_major: 1,
+  },
+```
+

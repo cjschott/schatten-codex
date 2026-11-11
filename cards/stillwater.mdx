@@ -1,0 +1,40 @@
+---
+title: "Stillwater"
+description: "SCHATTEN card SCH-FRO-07: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Stillwater."
+---
+
+**Stillwater** is a common frost reaction card (ID `SCH-FRO-07`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 1 |
+| Cast modes | veil |
+| Veil fuse | Not applicable |
+| Target | `none` |
+
+## Effect
+
+Veiled reaction to an opponent cast costing 3 or more: applies 2 Chill.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Oracle's Circlet](/items/oracle-s-circlet): 1 copy
+- [Frostbound Crown](/items/frostbound-crown): 1 copy
+- [Rimeheart Seal](/items/rimeheart-seal): 1 copy
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-FRO-07', version: 1, name: 'Stillwater', discipline: 'frost', category: 'reaction', rarity: 'common',
+    cost: 1, cast_modes: ['veil'], fuse: null, eligible: ['hood'], target: 'none',
+    trigger: { event: 'opponent.cast', min_cost: 3 },
+    effects: [{ op: 'status.apply', target: 'opponent', status: 'chill', stacks: 2 }],
+    veil_bonus: [], tags: ['frost', 'reaction', 'chill'], schema_major: 1,
+  },
+```
+

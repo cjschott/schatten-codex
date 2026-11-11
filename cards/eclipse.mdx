@@ -1,0 +1,41 @@
+---
+title: "Eclipse"
+description: "SCHATTEN card SCH-UMB-06: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Eclipse."
+---
+
+**Eclipse** is a rare umbra release card (ID `SCH-UMB-06`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 2 |
+| Cast modes | manifest |
+| Veil fuse | Not applicable |
+| Target | `none` |
+
+## Effect
+
+Unseen Release: consumes Charge and deals M damage, skipping declaration triggers.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Umbral Crook (proto)](/items/umbral-crook-proto): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-UMB-06', version: 1, name: 'Eclipse', discipline: 'umbra', category: 'release', rarity: 'rare',
+    cost: 2, cast_modes: ['manifest'], fuse: null, eligible: ['staff'], target: 'none',
+    unseen: true,
+    effects: [
+      { op: 'charge.consume' },
+      { op: 'damage', target: 'opponent', amount: M, element: 'charge' },
+    ],
+    veil_bonus: [], tags: ['umbra', 'release', 'unseen'], schema_major: 1,
+  },
+```
+

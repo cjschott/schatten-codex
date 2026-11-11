@@ -1,0 +1,39 @@
+---
+title: "Unweave"
+description: "SCHATTEN card SCH-ARC-02: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Unweave."
+---
+
+**Unweave** is a rare arcane reaction card (ID `SCH-ARC-02`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 2 |
+| Cast modes | veil |
+| Veil fuse | Not applicable |
+| Target | `none` |
+
+## Effect
+
+Veiled reaction that cancels an opponent Release at declaration.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Codex of Unweaving (proto)](/items/codex-of-unweaving-proto): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-ARC-02', version: 1, name: 'Unweave', discipline: 'arcane', category: 'reaction', rarity: 'rare',
+    cost: 2, cast_modes: ['veil'], fuse: null, eligible: ['focus'], target: 'none',
+    trigger: { event: 'opponent.release' },
+    // cancel on a Release implies charge.clear(countered) (spec §4.3, C6).
+    effects: [{ op: 'cancel' }],
+    veil_bonus: [], tags: ['arcane', 'reaction', 'counter'], schema_major: 1,
+  },
+```
+

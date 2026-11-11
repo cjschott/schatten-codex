@@ -1,0 +1,33 @@
+---
+title: "Rimeheart Seal"
+description: "SCHATTEN prototype equipment P-RE-2: its slot, full card contributions, passive abilities, drawbacks, and validated preset usage."
+---
+
+**Rimeheart Seal** equips in the **relic** slot (ID `P-RE-2`). It adds 1 cards to your 22-card deck.
+
+## Granted cards
+
+| Card | Copies |
+| --- | ---: |
+| [Stillwater](/cards/stillwater) | 1 |
+
+## Preset usage
+
+- [L2 Rime Control](/loadouts/l2-rime-control)
+- [L4 Prism Weaver](/loadouts/l4-prism-weaver)
+
+## Stats, passive abilities and drawbacks
+
+The following verified source definition is authoritative for base-stat overrides, passive hook conditions, and any drawbacks. Empty arrays mean that no effect of that category is defined.
+
+```typescript
+{
+    id: 'P-RE-2', version: 1, name: 'Rimeheart Seal', slot: 'relic', cards: [c('SCH-FRO-07')],
+    passives: [{ hook: 'stat.add', stat: 'opp_cap.chill', n: 1 }],
+    drawbacks: [{ hook: 'stat.set', stat: 'mana_cap', value: 5 }],
+    notes: 'Requires K-1 (prototype Relics may grant any prototype card).',
+  },
+```
+
+<Note>Player-earned equipment, crafting, and custom loadout editing are not yet implemented in the browser prototype.</Note>
+

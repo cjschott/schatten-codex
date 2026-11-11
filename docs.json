@@ -33,26 +33,111 @@
         ]
       },
       {
-        "group": "Combat fundamentals",
+        "group": "Combat rules",
         "icon": "swords",
         "pages": [
+          "rules/turn-structure",
           "rules/casting",
+          "rules/mana",
+          "rules/weaves",
+          "rules/damage",
+          "rules/statuses",
+          "rules/reactions",
+          "rules/deck-validation",
           "rules/gear-and-loadouts"
         ]
       },
       {
-        "group": "Replay and analysis",
+        "group": "Cards",
+        "icon": "layers",
+        "pages": [
+          "cards/index",
+          "cards/kindle",
+          "cards/stoke",
+          "cards/cinder-dart",
+          "cards/immolate",
+          "cards/ember-ward",
+          "cards/sunfall",
+          "cards/hoarfrost",
+          "cards/glacial-lattice",
+          "cards/rime-lance",
+          "cards/freeze-frame",
+          "cards/brittle",
+          "cards/stillwater",
+          "cards/glyph",
+          "cards/unweave",
+          "cards/scrying-eye",
+          "cards/dispel",
+          "cards/gloam",
+          "cards/feint",
+          "cards/veilshift",
+          "cards/eclipse",
+          "cards/focus",
+          "cards/prismatic-conduit",
+          "cards/discharge",
+          "cards/bulwark"
+        ]
+      },
+      {
+        "group": "Equipment",
+        "icon": "shield",
+        "pages": [
+          "items/index",
+          "items/cinderbrand-staff-proto",
+          "items/rimewood-staff",
+          "items/umbral-crook-proto",
+          "items/prism-wand",
+          "items/ember-grimoire-proto",
+          "items/codex-of-unweaving-proto",
+          "items/hoarfrost-lens",
+          "items/ashen-mantle",
+          "items/glacier-robe-proto",
+          "items/grey-habit-proto",
+          "items/veilwarden-s-hood",
+          "items/oracle-s-circlet",
+          "items/frostbound-crown",
+          "items/ring-of-kindling",
+          "items/ring-of-focus",
+          "items/seer-s-band",
+          "items/heart-of-sunfall",
+          "items/rimeheart-seal",
+          "items/umbral-lantern"
+        ]
+      },
+      {
+        "group": "Loadouts",
+        "icon": "wand-sparkles",
+        "pages": [
+          "loadouts/index",
+          "loadouts/l1-ember-assault",
+          "loadouts/l2-rime-control",
+          "loadouts/l3-gloam-ledger",
+          "loadouts/l4-prism-weaver"
+        ]
+      },
+      {
+        "group": "Replay & analysis",
         "icon": "scan-search",
         "pages": [
           "replay/record-and-review",
-          "replay/ai-analysis"
+          "replay/ai-analysis",
+          "replay/file-reference"
         ]
       },
       {
         "group": "Playtesting",
         "icon": "clipboard-check",
         "pages": [
-          "playtest/feedback"
+          "playtest/feedback",
+          "playtest/test-scenarios"
+        ]
+      },
+      {
+        "group": "Reference",
+        "icon": "book-marked",
+        "pages": [
+          "reference/glossary",
+          "reference/sources-and-versions"
         ]
       }
     ]

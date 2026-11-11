@@ -1,0 +1,36 @@
+---
+title: "Cinderbrand Staff (proto)"
+description: "SCHATTEN prototype equipment P-ST-1: its slot, full card contributions, passive abilities, drawbacks, and validated preset usage."
+---
+
+**Cinderbrand Staff (proto)** equips in the **staff** slot (ID `P-ST-1`). It adds 6 cards to your 22-card deck.
+
+## Granted cards
+
+| Card | Copies |
+| --- | ---: |
+| [Kindle](/cards/kindle) | 2 |
+| [Immolate](/cards/immolate) | 2 |
+| [Cinder Dart](/cards/cinder-dart) | 1 |
+| [Discharge](/cards/discharge) | 1 |
+
+## Preset usage
+
+- [L1 Ember Assault](/loadouts/l1-ember-assault)
+
+## Stats, passive abilities and drawbacks
+
+The following verified source definition is authoritative for base-stat overrides, passive hook conditions, and any drawbacks. Empty arrays mean that no effect of that category is defined.
+
+```typescript
+{
+    id: 'P-ST-1', version: 1, name: 'Cinderbrand Staff (proto)', slot: 'staff',
+    cards: [c('SCH-FIR-01', 2), c('SCH-FIR-05', 2), c('SCH-FIR-04'), c('SCH-NEU-03')],
+    base: { stat: 'loom', value: 4 },
+    passives: [{ hook: 'damage.add', filter: { release: true, element: 'fire' }, n: 1 }],
+    drawbacks: [{ hook: 'stat.add', stat: 'ward_gain', n: -1 }],
+  },
+```
+
+<Note>Player-earned equipment, crafting, and custom loadout editing are not yet implemented in the browser prototype.</Note>
+

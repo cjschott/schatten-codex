@@ -1,0 +1,35 @@
+---
+title: "Ashen Mantle"
+description: "SCHATTEN prototype equipment P-VE-1: its slot, full card contributions, passive abilities, drawbacks, and validated preset usage."
+---
+
+**Ashen Mantle** equips in the **vestment** slot (ID `P-VE-1`). It adds 4 cards to your 22-card deck.
+
+## Granted cards
+
+| Card | Copies |
+| --- | ---: |
+| [Ember Ward](/cards/ember-ward) | 2 |
+| [Bulwark](/cards/bulwark) | 2 |
+
+## Preset usage
+
+- [L1 Ember Assault](/loadouts/l1-ember-assault)
+- [L4 Prism Weaver](/loadouts/l4-prism-weaver)
+
+## Stats, passive abilities and drawbacks
+
+The following verified source definition is authoritative for base-stat overrides, passive hook conditions, and any drawbacks. Empty arrays mean that no effect of that category is defined.
+
+```typescript
+{
+    id: 'P-VE-1', version: 1, name: 'Ashen Mantle', slot: 'vestment',
+    cards: [c('SCH-FIR-07', 2), c('SCH-NEU-04', 2)],
+    base: { stat: 'max_health', value: 28 },
+    passives: [{ hook: 'stat.add', stat: 'resist.frost', n: 1 }],
+    drawbacks: [],
+  },
+```
+
+<Note>Player-earned equipment, crafting, and custom loadout editing are not yet implemented in the browser prototype.</Note>
+

@@ -1,0 +1,40 @@
+---
+title: "Sunfall"
+description: "SCHATTEN card SCH-FIR-08: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Sunfall."
+---
+
+**Sunfall** is a relic fire ritual card (ID `SCH-FIR-08`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 4 |
+| Cast modes | veil |
+| Veil fuse | 2 |
+| Target | `none` |
+
+## Effect
+
+Veiled fuse-2 Ritual: deals 10 Fire damage and applies 3 Burn.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Heart of Sunfall](/items/heart-of-sunfall): 1 copy
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-FIR-08', version: 1, name: 'Sunfall', discipline: 'fire', category: 'ritual', rarity: 'relic',
+    cost: 4, cast_modes: ['veil'], fuse: 2, eligible: ['relic'], target: 'none',
+    effects: [
+      { op: 'damage', target: 'opponent', amount: 10, element: 'fire' },
+      { op: 'status.apply', target: 'opponent', status: 'burn', stacks: 3 },
+    ],
+    veil_bonus: [], tags: ['fire', 'ritual', 'finisher'], schema_major: 1,
+  },
+```
+

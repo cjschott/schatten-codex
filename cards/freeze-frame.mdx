@@ -1,0 +1,38 @@
+---
+title: "Freeze Frame"
+description: "SCHATTEN card SCH-FRO-04: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Freeze Frame."
+---
+
+**Freeze Frame** is a rare frost spell card (ID `SCH-FRO-04`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 2 |
+| Cast modes | manifest, veil |
+| Veil fuse | 1 |
+| Target | `opponent_veil` |
+
+## Effect
+
+Targets an enemy Veil; delays non-Reactions or suppresses Reactions.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Frostbound Crown](/items/frostbound-crown): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-FRO-04', version: 1, name: 'Freeze Frame', discipline: 'frost', category: 'spell', rarity: 'rare',
+    cost: 2, cast_modes: ['manifest', 'veil'], fuse: 1, eligible: ['hood'], target: 'opponent_veil',
+    // veil.fuse acts on non-Reaction objects only, veil.suppress on Reactions only (A-27).
+    effects: [{ op: 'veil.fuse', delta: 1 }, { op: 'veil.suppress' }],
+    veil_bonus: [], tags: ['frost', 'schatten', 'delay'], schema_major: 1,
+  },
+```
+

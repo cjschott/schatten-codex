@@ -1,0 +1,40 @@
+---
+title: "Bulwark"
+description: "SCHATTEN card SCH-NEU-04: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Bulwark."
+---
+
+**Bulwark** is a common neutral ward card (ID `SCH-NEU-04`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 1 |
+| Cast modes | manifest, veil |
+| Veil fuse | 1 |
+| Target | `none` |
+
+## Effect
+
+Gains 3 Ward, or 4 when resolved from Veil.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Ashen Mantle](/items/ashen-mantle): 2 copies
+- [Glacier Robe (proto)](/items/glacier-robe-proto): 2 copies
+- [Grey Habit (proto)](/items/grey-habit-proto): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-NEU-04', version: 1, name: 'Bulwark', discipline: 'neutral', category: 'ward', rarity: 'common',
+    cost: 1, cast_modes: ['manifest', 'veil'], fuse: 1, eligible: ['vestment'], target: 'none',
+    effects: [{ op: 'ward.gain', target: 'self', amount: 3 }],
+    veil_bonus: [{ path: '0.amount', add: 1 }],
+    tags: ['neutral', 'ward'], schema_major: 1,
+  },
+```
+

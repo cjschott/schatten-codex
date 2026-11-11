@@ -1,0 +1,40 @@
+---
+title: "Stoke"
+description: "SCHATTEN card SCH-FIR-03: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Stoke."
+---
+
+**Stoke** is a common fire modifier card (ID `SCH-FIR-03`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 1 |
+| Cast modes | manifest |
+| Veil fuse | Not applicable |
+| Target | `none` |
+
+## Effect
+
+Adds 3 to a Fire Charge, or 2 to a Charge of another element.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Ember Grimoire (proto)](/items/ember-grimoire-proto): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-FIR-03', version: 1, name: 'Stoke', discipline: 'fire', category: 'modifier', rarity: 'common',
+    cost: 1, cast_modes: ['manifest'], fuse: null, eligible: ['focus'], target: 'none',
+    effects: [{
+      op: 'if', pred: { p: 'charge_element_is', element: 'fire' },
+      then: [{ op: 'charge.modify', add: 3 }], else: [{ op: 'charge.modify', add: 2 }],
+    }],
+    veil_bonus: [], tags: ['fire', 'modifier', 'amplify'], schema_major: 1,
+  },
+```
+

@@ -1,0 +1,41 @@
+---
+title: "Rime Lance"
+description: "SCHATTEN card SCH-FRO-03: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Rime Lance."
+---
+
+**Rime Lance** is a common frost release card (ID `SCH-FRO-03`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 2 |
+| Cast modes | manifest |
+| Veil fuse | Not applicable |
+| Target | `none` |
+
+## Effect
+
+Releases a Charge for M damage and applies 1 Chill.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Rimewood Staff](/items/rimewood-staff): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-FRO-03', version: 1, name: 'Rime Lance', discipline: 'frost', category: 'release', rarity: 'common',
+    cost: 2, cast_modes: ['manifest'], fuse: null, eligible: ['staff'], target: 'none',
+    effects: [
+      { op: 'charge.consume' },
+      { op: 'damage', target: 'opponent', amount: M, element: 'charge' },
+      { op: 'status.apply', target: 'opponent', status: 'chill', stacks: 1 },
+    ],
+    veil_bonus: [], tags: ['frost', 'release', 'chill'], schema_major: 1,
+  },
+```
+

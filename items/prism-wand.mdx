@@ -1,0 +1,36 @@
+---
+title: "Prism Wand"
+description: "SCHATTEN prototype equipment P-ST-4: its slot, full card contributions, passive abilities, drawbacks, and validated preset usage."
+---
+
+**Prism Wand** equips in the **staff** slot (ID `P-ST-4`). It adds 6 cards to your 22-card deck.
+
+## Granted cards
+
+| Card | Copies |
+| --- | ---: |
+| [Glyph](/cards/glyph) | 2 |
+| [Kindle](/cards/kindle) | 1 |
+| [Hoarfrost](/cards/hoarfrost) | 1 |
+| [Discharge](/cards/discharge) | 2 |
+
+## Preset usage
+
+- [L4 Prism Weaver](/loadouts/l4-prism-weaver)
+
+## Stats, passive abilities and drawbacks
+
+The following verified source definition is authoritative for base-stat overrides, passive hook conditions, and any drawbacks. Empty arrays mean that no effect of that category is defined.
+
+```typescript
+{
+    id: 'P-ST-4', version: 1, name: 'Prism Wand', slot: 'staff',
+    cards: [c('SCH-ARC-01', 2), c('SCH-FIR-01'), c('SCH-FRO-01'), c('SCH-NEU-03', 2)],
+    base: { stat: 'loom', value: 5 },
+    passives: [],
+    drawbacks: [{ hook: 'stat.add', stat: 'max_health', n: -3 }],
+  },
+```
+
+<Note>Player-earned equipment, crafting, and custom loadout editing are not yet implemented in the browser prototype.</Note>
+

@@ -1,0 +1,39 @@
+---
+title: "Kindle"
+description: "SCHATTEN card SCH-FIR-01: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Kindle."
+---
+
+**Kindle** is a common fire primer card (ID `SCH-FIR-01`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 1 |
+| Cast modes | manifest, veil |
+| Veil fuse | 1 |
+| Target | `none` |
+
+## Effect
+
+Creates a Fire Charge of magnitude 3; Veil resolution adds 1.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Cinderbrand Staff (proto)](/items/cinderbrand-staff-proto): 2 copies
+- [Prism Wand](/items/prism-wand): 1 copy
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-FIR-01', version: 1, name: 'Kindle', discipline: 'fire', category: 'primer', rarity: 'common',
+    cost: 1, cast_modes: ['manifest', 'veil'], fuse: 1, eligible: ['staff'], target: 'none',
+    effects: [{ op: 'charge.create', element: 'fire', magnitude: 3 }],
+    veil_bonus: [{ path: '0.magnitude', add: 1 }],
+    tags: ['fire', 'primer'], schema_major: 1,
+  },
+```
+

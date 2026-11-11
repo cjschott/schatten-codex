@@ -1,0 +1,32 @@
+---
+title: "Umbral Lantern"
+description: "SCHATTEN prototype equipment P-RE-3: its slot, full card contributions, passive abilities, drawbacks, and validated preset usage."
+---
+
+**Umbral Lantern** equips in the **relic** slot (ID `P-RE-3`). It adds 1 cards to your 22-card deck.
+
+## Granted cards
+
+| Card | Copies |
+| --- | ---: |
+| [Veilshift](/cards/veilshift) | 1 |
+
+## Preset usage
+
+- [L3 Gloam Ledger](/loadouts/l3-gloam-ledger)
+
+## Stats, passive abilities and drawbacks
+
+The following verified source definition is authoritative for base-stat overrides, passive hook conditions, and any drawbacks. Empty arrays mean that no effect of that category is defined.
+
+```typescript
+{
+    id: 'P-RE-3', version: 1, name: 'Umbral Lantern', slot: 'relic', cards: [c('SCH-UMB-03')],
+    passives: [{ hook: 'stat.add', stat: 'slots', n: 1 }],
+    drawbacks: [{ hook: 'stat.add', stat: 'max_health', n: -3 }],
+    notes: 'Requires K-1.',
+  },
+```
+
+<Note>Player-earned equipment, crafting, and custom loadout editing are not yet implemented in the browser prototype.</Note>
+

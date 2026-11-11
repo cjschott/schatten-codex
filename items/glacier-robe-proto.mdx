@@ -1,0 +1,34 @@
+---
+title: "Glacier Robe (proto)"
+description: "SCHATTEN prototype equipment P-VE-2: its slot, full card contributions, passive abilities, drawbacks, and validated preset usage."
+---
+
+**Glacier Robe (proto)** equips in the **vestment** slot (ID `P-VE-2`). It adds 4 cards to your 22-card deck.
+
+## Granted cards
+
+| Card | Copies |
+| --- | ---: |
+| [Glacial Lattice](/cards/glacial-lattice) | 2 |
+| [Bulwark](/cards/bulwark) | 2 |
+
+## Preset usage
+
+- [L2 Rime Control](/loadouts/l2-rime-control)
+
+## Stats, passive abilities and drawbacks
+
+The following verified source definition is authoritative for base-stat overrides, passive hook conditions, and any drawbacks. Empty arrays mean that no effect of that category is defined.
+
+```typescript
+{
+    id: 'P-VE-2', version: 1, name: 'Glacier Robe (proto)', slot: 'vestment',
+    cards: [c('SCH-FRO-02', 2), c('SCH-NEU-04', 2)],
+    base: { stat: 'max_health', value: 32 },
+    passives: [],
+    drawbacks: [{ hook: 'limit', what: 'plays_per_turn', n: 4 }],
+  },
+```
+
+<Note>Player-earned equipment, crafting, and custom loadout editing are not yet implemented in the browser prototype.</Note>
+

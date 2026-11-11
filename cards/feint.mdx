@@ -1,0 +1,38 @@
+---
+title: "Feint"
+description: "SCHATTEN card SCH-UMB-02: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Feint."
+---
+
+**Feint** is a common umbra spell card (ID `SCH-UMB-02`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 0 |
+| Cast modes | veil |
+| Veil fuse | 1 |
+| Target | `none` |
+
+## Effect
+
+Free Veil bluff: draw 1 on resolution; exposure gives +2 to next mana refresh.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Veilwarden's Hood](/items/veilwarden-s-hood): 2 copies
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-UMB-02', version: 1, name: 'Feint', discipline: 'umbra', category: 'spell', rarity: 'common',
+    cost: 0, cast_modes: ['veil'], fuse: 1, eligible: ['hood'], target: 'none',
+    effects: [{ op: 'draw', target: 'self', n: 1 }],
+    on_exposed: [{ op: 'mana.next_refresh', delta: 2 }],
+    veil_bonus: [], tags: ['umbra', 'bluff'], schema_major: 1,
+  },
+```
+

@@ -1,0 +1,48 @@
+---
+title: "Dispel"
+description: "SCHATTEN card SCH-ARC-04: verified cost, discipline, cast modes, rules effects, and prototype gear that grants Dispel."
+---
+
+**Dispel** is a common arcane spell card (ID `SCH-ARC-04`, version 1).
+
+| Attribute | Value |
+| --- | --- |
+| Mana cost | 2 |
+| Cast modes | manifest, veil |
+| Veil fuse | 1 |
+| Target | `opponent_veil_or_sigil` |
+
+## Effect
+
+Destroys a targeted opponent Veil or Sigil; destroying a Reaction Veil draws 1.
+
+The canonical definition below gives the exact conditional operations, triggers and bonuses. Damage resolution, Charge legality and reaction timing follow the [combat rules](/rules/casting).
+
+## Granted by equipment
+
+- [Codex of Unweaving (proto)](/items/codex-of-unweaving-proto): 1 copy
+
+## Verified content data
+
+From [cards.ts](https://github.com/cjschott/schatten/blob/a84f128/packages/content/src/cards.ts):
+
+```typescript
+{
+    id: 'SCH-ARC-04', version: 1, name: 'Dispel', discipline: 'arcane', category: 'spell', rarity: 'common',
+    cost: 2, cast_modes: ['manifest', 'veil'], fuse: 1, eligible: ['focus'], target: 'opponent_veil_or_sigil',
+    effects: [{
+      op: 'choose', options: [
+        {
+          label: 'veil', ops: [{
+            op: 'if', pred: { p: 'slot_kind_is', kind: 'reaction' },
+            then: [{ op: 'veil.destroy' }, { op: 'draw', target: 'self', n: 1 }],
+            else: [{ op: 'veil.destroy' }],
+          }],
+        },
+        { label: 'sigil', ops: [{ op: 'sigil.destroy' }] },
+      ],
+    }],
+    veil_bonus: [], tags: ['arcane', 'removal'], schema_major: 1,
+  },
+```
+
