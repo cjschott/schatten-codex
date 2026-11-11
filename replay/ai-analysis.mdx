@@ -1,0 +1,34 @@
+---
+title: "Use ChatGPT or Claude to analyze a duel"
+description: "Learn how to share SCHATTEN duel JSON with an AI assistant, what it can reliably infer, and why optimal-move claims require engine-backed verification."
+sidebarTitle: "AI analysis"
+---
+
+You can upload your completed SCHATTEN Duel Record and session file to an AI assistant to ask questions about the match. The important limitation is that the canonical export is primarily a **replay input**, not a full prose combat transcript.
+
+## A useful prompt
+
+```text
+Analyze this SCHATTEN duel using only the uploaded evidence.
+Identify the winner and number of rounds, the casting patterns
+and mulligan choices for each seat, and any decisions worth reviewing.
+Distinguish facts directly present in the JSON from hypotheses.
+Do not invent card names, health totals, damage or optimal plays.
+Tell me exactly what extra state or content data is needed for
+a rigorous tactical evaluation.
+```
+
+## What can be determined directly?
+
+- Which seat won and by which reported condition.
+- The ordering of mulligans, casts, modes, targets and turn ends.
+- Both equipment ID lists, deck hashes and the rules/content versions.
+- Whether the companion session identifies a particular player or AI controller.
+
+The export does **not** directly embed a readable mapping from hand indices to card names at every decision, each card's effect text, complete per-action state snapshots, or expanded engine events. An AI without the matching rules engine and content cannot reliably explain every damage event or prove a better line.
+
+## Better analysis is a planned feature
+
+The goal is an optional AI-readable analytical export built **from verified engine replay**: named actions, state deltas, visible options and outcome context. The canonical deterministic Duel Record should remain intact. Alternative-action claims require engine-backed simulation rather than confident prose.
+
+Use the in-game [tactical replay](/replay/record-and-review) today, and log unclear steps in [playtest feedback](/playtest/feedback).
