@@ -1,0 +1,29 @@
+---
+title: "Manifest, Veil, and timing in combat"
+description: "Understand SCHATTEN's two casting modes, face-down Schatten slots, fuse timing, reactions, mana, and why the combat log matters during the prototype."
+sidebarTitle: "Casting"
+---
+
+SCHATTEN lets you cast from your hand in two different ways. Learning when to **Manifest** and when to **Veil** is one of the main tactical decisions in each duel.
+
+## Manifest
+
+**Manifest** resolves a card from your hand immediately. Its action becomes visible as it resolves.
+
+## Veil
+
+**Veil** places a card face-down into your leftmost available Schatten slot. Your opponent can see that a slot is occupied and the card's cost and fuse, but not the card identity. A veiled card normally resolves when its fuse reaches zero. A veiled **Reaction** resolves when its trigger occurs.
+
+The public information lets an opponent plan around a threat without necessarily knowing which card is waiting.
+
+## Other signals to watch
+
+- **Mana and carry:** compare current mana, cap, and carry before and after casting and ending turns.
+- **Ward, health, statuses and Charge:** watch how these change in the panels and log.
+- **Charge at turn end:** when a Charge is active, the interface may offer ending with carry into a slot or allowing it to gutter.
+- **Dusk discard:** if your hand exceeds its limit, choose discards or let the engine select them.
+- **Targets and choices:** legal targets and options are exposed as separate action buttons.
+
+These are descriptions of prototype behavior, not a substitute for the full numerical rules reference. Detailed costs, thresholds, timings, and each status definition should be derived from the canonical rule specification before publication as an authoritative table.
+
+If an action looks wrong, [export the duel and note the replay step](/replay/record-and-review).
