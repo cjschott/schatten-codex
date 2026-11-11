@@ -1,0 +1,60 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "aspen",
+  "name": "The SCHATTEN Codex",
+  "description": "Official player guide, rules reference, and prototype playtesting handbook for SCHATTEN.",
+  "colors": {
+    "primary": "#6744A8",
+    "light": "#C4A9ED",
+    "dark": "#301A51"
+  },
+  "appearance": {
+    "default": "dark"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Play the prototype",
+      "href": "https://schatten-dev.virrynstudios.com"
+    }
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Start here",
+        "icon": "book-open",
+        "pages": [
+          "index",
+          "start/first-duel",
+          "start/prototype-status"
+        ]
+      },
+      {
+        "group": "Combat fundamentals",
+        "icon": "swords",
+        "pages": [
+          "rules/casting",
+          "rules/gear-and-loadouts"
+        ]
+      },
+      {
+        "group": "Replay and analysis",
+        "icon": "scan-search",
+        "pages": [
+          "replay/record-and-review",
+          "replay/ai-analysis"
+        ]
+      },
+      {
+        "group": "Playtesting",
+        "icon": "clipboard-check",
+        "pages": [
+          "playtest/feedback"
+        ]
+      }
+    ]
+  }
+}
