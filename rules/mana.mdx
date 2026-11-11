@@ -1,0 +1,42 @@
+---
+title: "Mana, refresh, caps, and carry"
+description: "Understand SCHATTEN mana progression, the first-player adjustment, carry limits, Chill penalties, and when unspent mana disappears."
+---
+
+Mana pays for casting cards. SCHATTEN's baseline `C1` gives each wizard increasing base mana across their own turns, subject to equipment caps.
+
+## Base mana
+
+For your own turn number **t**, base mana is the smaller of `2 + t` and your mana cap. The wizard playing first gets **one less mana only on their first turn**.
+
+| Your own turn | First player base | Second player base |
+| --- | ---: | ---: |
+| 1 | 2 | 3 |
+| 2 | 4 | 4 |
+| 3 | 5 | 5 |
+| 4 onward | 6 | 6 |
+
+This table assumes the default mana cap of **6**. The Rimeheart Seal can set a lower cap.
+
+## Dawn refresh
+
+Apply these operations in order:
+
+1. Calculate base mana for your own turn number.
+2. Add your prior turn's carry (0 or 1).
+3. Add refresh bonuses such as Feint's exposure bonus.
+4. Subtract all refresh penalties, including Chill stacks.
+5. Clamp the resulting pool to at least 1 and at most **mana cap + 2**.
+6. Clear the consumed penalties and bonuses.
+
+**Example:** base 6, carry 1, Chill 2 and another penalty of 3 produces `6 + 1 - 2 - 3 = 2` mana.
+
+## Spending and carrying
+
+A cast pays its full adjusted cost. Costs never go below zero. Normal end-of-turn mana carry is **at most 1**. An unused Charge is a *different* resource: carrying a Charge costs 1 mana and occupies a Schatten slot if legal.
+
+A Charge carried this way gains 1 magnitude when it returns at your next Dawn and **cannot be carried again**.
+
+<Warning>Do not confuse mana carry (up to 1 unspent mana) with Charge carry (an active Weave stored as a Schatten object). They have different conditions and consequences.</Warning>
+
+Source: [canonical rules §4.5, §4.6](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/spec-v0.1.md).

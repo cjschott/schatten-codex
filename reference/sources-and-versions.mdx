@@ -1,0 +1,33 @@
+---
+title: "Versioned sources and documentation accuracy"
+description: "See the exact SCHATTEN game release, rules hash, canonical mechanics, content definitions, and guidelines used to keep this public player reference accurate."
+---
+
+The SCHATTEN Codex documents the current private browser prototype and explicitly labels planned features. Each factual statement should trace to approved rules, validated content or observed player-facing behavior.
+
+## Reference version
+
+| Component | Reference |
+| --- | --- |
+| Web release | `a84f128c5017` |
+| Rules engine | `0.4.0` |
+| Rules hash | `sha256:7fe8eddc78f268ffbb0235f9390a3117991bc4ce51df325800879eea082ef4e1` |
+| Game format | `proto-b22` |
+| Card content | 24 definitions |
+| Equipment content | 19 items |
+| Named presets | 4 |
+
+## Authoritative sources
+
+- [Canonical mechanics specification](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/spec-v0.1.md): rules baseline `A1`, `B22`, `C1`, `D1`
+- [Card definitions](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/packages/content/src/cards.ts): precise effects and card IDs
+- [Equipment definitions](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/packages/content/src/items.ts): grants, passives, drawbacks
+- [Format and loadouts](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/packages/content/src/prototype.ts): deck legality and four presets
+- [W1 playtest instructions](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/w1/play/playtest-checklist.md): player-facing browser workflow
+- [W1 product philosophy](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/w1/product-philosophy.md): design priorities
+
+## Publication policy
+
+Content describes **Playable**, **Engine foundation**, **Planned**, or **Under review** behavior. New mechanics do not become official merely because they appear in a future-facing idea or sample. When a game release changes rules, update the affected Codex pages and reference version together.
+
+Player-facing pages avoid deployment internals, account secrets, internal approval reports and infrastructure configuration. See [prototype scope](/start/prototype-status) for what testers can actually play now.

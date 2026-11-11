@@ -1,0 +1,37 @@
+---
+title: "SCHATTEN combat glossary"
+description: "Look up SCHATTEN terms such as Manifest, Veil, Schatten, Loom, Charge, Primer, Release, Ward, fuse, Dusk, and deterministic Duel Record."
+---
+
+Use this glossary when reading SCHATTEN card text or replay events. These terms match the prototype engine and canonical specification.
+
+| Term | Meaning |
+| --- | --- |
+| **Manifest** | Cast a card directly from hand for immediate resolution |
+| **Veil** | Place an eligible card face-down in Schatten for delayed or triggered resolution |
+| **Schatten** | Ordered private-card slots with public occupancy and timing information |
+| **Fuse** | Countdown before a non-Reaction Veil or carried Charge resolves |
+| **Reaction** | Veiled card that triggers when its condition occurs rather than by fuse |
+| **Declare** | Cast phase that can open opponent reaction windows |
+| **Unseen** | Skips declaration triggers, not damage/health reactions |
+| **Loom** | Space for a Charge and the maximum length of its Weave |
+| **Charge** | Active elemental power with a magnitude M, modified until released |
+| **M** | Magnitude of the active Charge |
+| **Primer** | Starts a new Charge |
+| **Modifier** | Changes Charge magnitude |
+| **Conduit** | Converts a Charge's element |
+| **Release** | Spends the active Charge for a payoff |
+| **Gutter** | Losing an unspent Charge |
+| **Carry** | Preserve unused mana, or separately store a Charge in Schatten under stricter rules |
+| **Dawn** | Start-of-turn phase: refresh, status ticks, fuse countdown |
+| **Dusk** | End-of-turn phase: Charge handling, discards, mana carry |
+| **Record** | Public pile of resolved, countered or destroyed cards |
+| **Ward** | Damage-absorbing defense that generally expires at next Dawn |
+| **Burn** | Damage-over-time stacks that tick at Dawn |
+| **Chill** | Penalty to next mana refresh |
+| **Mulligan** | Exchange selected opening-hand cards for replacements |
+| **Exhaustion** | Increasing true damage when recycling Record into an empty deck |
+| **Duel Record** | Deterministic JSON inputs and validation hashes for reconstruction |
+| **Session file** | Companion JSON recording opponent/controller and named loadout context |
+
+See the [complete turn sequence](/rules/turn-structure) and [card library](/cards/index).

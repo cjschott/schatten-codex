@@ -1,0 +1,50 @@
+---
+title: "Turn structure, zones, and victory"
+description: "Learn the full SCHATTEN duel sequence: initial hands, two mulligans, Dawn, Draw, Main, Dusk, game zones, and immediate victory conditions."
+---
+
+A SCHATTEN duel alternates turns between two wizards. Every turn has **Dawn**, **Draw**, **Main**, and **Dusk**, with effects resolving in a prescribed order. Timing matters because a veiled spell can resolve before you draw or cast.
+
+## Zones
+
+| Zone | Who can see it? | What it holds |
+| --- | --- | --- |
+| Deck | Card order hidden | Cards not yet drawn |
+| Hand | Owner sees cards; opponent sees count | Cards available for casting |
+| Record | Public | Resolved, cancelled or destroyed cards |
+| Manifest | Public | Persistent Sigils, up to three |
+| Loom | Public | Zero or one active Charge |
+| Schatten | Slot occupancy, cost and fuse public; identity hidden | Veiled cards, Reactions and carried Charges |
+
+The first free Schatten slot is filled on placement. Existing objects do not slide when another slot becomes empty.
+
+## Opening hands and mulligans
+
+The wizard who plays first draws **5 cards**. The second wizard draws **6 cards**. Each wizard has **two free partial mulligans**: first player takes both, then second player takes both. On each mulligan, return any subset, including none, reshuffle and draw the same count. Opponents see the number returned, not the identities.
+
+## Your turn, in precise order
+
+<Steps>
+  <Step title="Dawn">
+    Advance your turn counter. Ward expires unless a rule says otherwise. End temporary effects tied to your Dawn. Refresh mana and consume Chill. Apply Burn and Regrowth ticks. Resolve Sigil Dawn effects. Reduce the fuses of your non-Reaction Schatten objects together, then resolve ready objects left to right.
+  </Step>
+  <Step title="Draw">
+    Draw **2 cards** unless modified. If a draw needs a card and the deck is empty, shuffle your Record back into your deck and take Exhaustion damage.
+  </Step>
+  <Step title="Main">
+    Cast cards using Manifest or Veil, choose valid targets and branches, or end your Main phase. Each action resolves completely before another input is accepted.
+  </Step>
+  <Step title="Dusk">
+    Choose whether to carry an eligible Charge into Schatten. Apply end-of-turn effects. Discard to your hand limit. Carry at most 1 unspent mana to your next turn; the rest is lost.
+  </Step>
+</Steps>
+
+## Ending the duel
+
+After every atomic event, the engine checks health. A wizard reduced to **0 or less** loses immediately. If the same atomic event defeats both, the **active wizard loses** under the approved prototype rule. The duel stops without completing unused pending operations.
+
+Exhaustion from reshuffles is **true damage**: first reshuffle 2, second 4, third 6, increasing by 2 each time.
+
+<Note>The current browser version uses **no gameplay round cap**. The round-30 adjudication mentioned in the specification is a simulation-only rule, not a normal browser duel limit.</Note>
+
+Source: [canonical rules §4.1, §4.2, §4.6a](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/spec-v0.1.md).

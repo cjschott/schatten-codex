@@ -1,0 +1,49 @@
+---
+title: "Primers, Charges, Weaves, and Releases"
+description: "Learn how SCHATTEN Primers build elemental Charges, Modifiers and Conduits shape Weaves, and Releases turn stored magnitude into damage."
+---
+
+The **Weave** system is a central source of tactical depth. A Primer creates a Charge. You can shape that Charge, then spend it through a Release.
+
+## The parts of a Weave
+
+| Card category | Main purpose | Example |
+| --- | --- | --- |
+| Primer | Start a Charge with an element and magnitude M | [Kindle](/cards/kindle) |
+| Modifier | Increase the active Charge's magnitude | [Stoke](/cards/stoke) |
+| Conduit | Convert the Charge's element | [Prismatic Conduit](/cards/prismatic-conduit) |
+| Release | Consume the Charge for a payoff | [Immolate](/cards/immolate) |
+
+The Charge remembers its current element, magnitude **M**, element history, names used, link count and whether it has been carried.
+
+## Key legality rules
+
+- Playing a new Primer when a Charge is already active **gutters** the old Charge and starts a new one.
+- A Modifier or Conduit needs an active Charge. The same card name cannot appear twice in the same Weave.
+- A Weave must preserve room in the staff's **Loom** for a final Release. Modifier or Conduit links must not exceed **Loom minus 1**; a Release may fill the last link.
+- Charge magnitude is capped at **12**. An additive Modifier increases M up to that cap.
+- The element may be converted only to a permitted element not already in the Charge history. Conversions use the elemental Wheel and may incur penalties.
+- A Release consumes the Charge. Base Release damage is capped at **15**, with further effect and defense processing.
+
+## Prototype elemental riders
+
+These special effects follow the **final Charge element when a Release resolves**:
+
+| Element | Rider |
+| --- | --- |
+| Fire | Apply Burn equal to floor(M / 3) |
+| Frost | Apply 1 Chill if M is at least 3 |
+| Arcane | Draw 1 if M is at least 4 |
+| Umbra | Release is Unseen at declaration |
+
+Storm, Life and Decay also have defined riders in the general design but **are not part of the current prototype card disciplines**.
+
+## Veiling a Primer
+
+When a veiled Primer resolves, its specified Veil bonus applies. For example, Kindle creates magnitude 4 instead of 3. A pending veiled Primer and a carried Charge cannot be stacked as simultaneous pending Charge sources.
+
+## Carrying a Charge
+
+At Dusk you may pay 1 mana and occupy a free Schatten slot to preserve a Charge for the next Dawn if it was never previously carried and no conflicting pending Charge source exists. It returns at **M + 1**, capped at 12. Otherwise the Charge gutters at turn end.
+
+Source: [canonical rules §4.6](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/spec-v0.1.md).

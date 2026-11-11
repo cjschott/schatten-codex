@@ -1,0 +1,46 @@
+---
+title: "Damage, Ward, resistance, and prevention"
+description: "Understand exactly how SCHATTEN computes damage: modifiers, Release caps, resistance, Ward absorption, reaction prevention, and health loss."
+---
+
+A SCHATTEN attack does not simply subtract its printed number from Health. The engine applies a fixed damage pipeline; knowing its order is essential when evaluating defense.
+
+## Damage resolution
+
+<Steps>
+  <Step title="Calculate base damage">
+    The card or status effect supplies one or more damage instances and an element.
+  </Step>
+  <Step title="Apply attack modifiers">
+    Item modifiers apply, followed by eligible Shock effects. These modifications adjust the first instance.
+  </Step>
+  <Step title="Apply the Release cap">
+    A Release's total damage is limited to **15** before defenses. Excess is removed from later instances first.
+  </Step>
+  <Step title="Apply elemental resistance">
+    Subtract the target's resistance for each damage instance, never lowering an instance below zero.
+  </Step>
+  <Step title="Absorb with Ward">
+    Ward absorbs eligible damage after resistance. Pierce reduces how much of that damage Ward can absorb.
+  </Step>
+  <Step title="Apply prevention">
+    Registered shields and qualifying damage Reactions can reduce the remaining pending damage.
+  </Step>
+  <Step title="Reduce Health">
+    Any unprevented remainder reduces the wizard's Health. The event records how much was modified, resisted, absorbed and prevented.
+  </Step>
+</Steps>
+
+## Ward does not last forever
+
+Ordinary Ward expires at the owner's next Dawn *before* status ticks. A special effect such as Permafrost may alter that, but Permafrost is not in the current 24-card prototype library.
+
+## True damage versus ordinary damage
+
+**Exhaustion** from reshuffling a depleted deck is true damage and bypasses the ordinary damage and Reaction pipeline. Explicit Health loss similarly bypasses the normal damage pipeline. Do not describe either as simply an elemental attack.
+
+## Practical test
+
+Compare an attack before and after gaining Ward or changing the source equipment. Record the exact step in a verified replay to see whether the difference came from the attack, resistance, Ward or reaction prevention.
+
+Source: [canonical rules §4.4](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/spec-v0.1.md).

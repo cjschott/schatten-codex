@@ -1,0 +1,33 @@
+---
+title: "Burn, Chill, Ward, and temporary effects"
+description: "Learn the active SCHATTEN prototype statuses, their timing, stacking caps, interactions with Ward, and which additional status effects are not in the starter pool."
+---
+
+The SCHATTEN prototype currently uses **Burn**, **Chill**, **Revealed**, and **Suppressed**, alongside Ward and Charge as separate combat state concepts.
+
+## Prototype status reference
+
+| Effect | What it does | Timing or duration |
+| --- | --- | --- |
+| Burn | At the affected wizard's Dawn, deal Fire damage equal to stacks, then remove one stack | After ordinary Ward expires |
+| Chill | Reduce mana refresh by the number of stacks | Consumed during that Dawn's mana refresh |
+| Revealed | Identifies a targeted Schatten object | Until that object leaves its slot |
+| Suppressed | Disables eligible Reaction triggering | Until the suppressing caster's next Dawn |
+
+**Default Burn cap: 9 stacks.** Heart of Sunfall increases the opponent's cap by 3, to **12**.
+
+**Default Chill cap: 2 stacks.** Rimeheart Seal increases the opponent's cap by 1, to **3**.
+
+## Burn and Ward example
+
+If a wizard begins Dawn with 3 Burn, they take a Fire damage event for 3, reduced by any relevant resistance or remaining Ward. The Burn stack count then falls to 2. Normally Ward expired before this tick, so it will not absorb the Burn unless a specific effect preserved it.
+
+## Chill and mana example
+
+A wizard with 2 Chill has 2 subtracted during mana refresh at Dawn. Then the Chill is cleared. This can change whether a planned Release is affordable that turn.
+
+## Other defined statuses
+
+The broader rules schema also specifies **Shock**, **Regrowth**, and **Wither**. They are **not represented in the 24-card starter prototype set** and should not be confused with current playable content.
+
+Source: [canonical rules §4.6b](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/spec-v0.1.md).

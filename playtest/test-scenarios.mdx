@@ -1,0 +1,42 @@
+---
+title: "Eight structured SCHATTEN playtest scenarios"
+description: "Run focused SCHATTEN prototype tests for loadout strategy, Veil timing, mana carry, reactions, status effects, replay determinism, and repeatable feedback."
+---
+
+The prototype playtest should answer whether **the combat itself** is enjoyable, understandable and strategically interesting. Use these exercises instead of relying only on the final winner.
+
+## Suggested exercises
+
+| Scenario | Action | What to observe |
+| --- | --- | --- |
+| Loadout tour | Play each of the four presets | Noticeable strategic differences and deck clarity |
+| Opponent comparison | Play Greedy then ISMCTS Low | Predictability, challenge and decision delays |
+| Veil versus Manifest | Cast eligible cards both ways | Timing, fuse and bonus clarity |
+| Resource decisions | Build a Charge and carry it if legal | Mana carry versus Charge carry confusion |
+| Reaction response | Encounter a declared Release or damage Reaction | Whether the counterplay is understandable |
+| Status timing | Apply Burn or Chill and watch next Dawn | Correct damage and mana changes |
+| Replay audit | Export two files, reopen, verify and step through | Exact and understandable reconstruction |
+| Freeform experience | Play a duel without focusing on tests | Fun, frustration, pacing and willingness to replay |
+
+## Report template
+
+```text
+SCHATTEN version:
+Rules engine:
+Loadout:
+AI opponent and loadout:
+Duel ID:
+Replay step or round:
+Category: bug / clarity / balance / strategy / feature
+Expected:
+Observed:
+Why it matters:
+Can I reproduce it?
+Attached: duel.json / session.json (if appropriate)
+```
+
+For balance feedback, describe repeated patterns. One result is a **personal experience**, not statistical evidence of imbalance.
+
+For problems you cannot explain, select **clarity** and record what you thought the move should do. That is valuable, even if the engine followed the rules correctly.
+
+Source: [W1 player playtest checklist](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/w1/play/playtest-checklist.md) and [original notes template](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/playtest-template.md).

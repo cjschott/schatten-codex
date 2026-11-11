@@ -1,0 +1,43 @@
+---
+title: "Duel Record and session JSON explained"
+description: "Understand each major field in SCHATTEN's deterministic Duel Record JSON, what the companion session file adds, and how to interpret hashes for replay verification."
+---
+
+When you export a SCHATTEN match, keep the **Duel Record** and **session file** together. They serve different purposes.
+
+## Duel Record format
+
+The `schatten.duel/1` record includes:
+
+| JSON property | Meaning |
+| --- | --- |
+| `engine` | Rules engine ID, version and rules hash |
+| `content` | Content snapshot, effect schema and format |
+| `config` | Active rule variants and opening-hand/mulligan parameters |
+| `seed` | Deterministic random seed |
+| `first` | Seat that acted first |
+| `players` | Each seat's item IDs and deck hash |
+| `inputs` | Ordered mulligans, casts, targets, decisions and turn endings |
+| `commitments` | Verification commitments for hidden information |
+| `turn_hashes`, `input_hashes`, `summary_hashes` | Validation evidence for reconstruction |
+| `events` | Event count and aggregate event hash |
+| `result` | Winner seat, reason, round count and final hash |
+| `duel_id` | Hash-based match identifier |
+
+### Important distinction
+
+The `events` property holds a **count and hash**, not an expanded readable array of every effect. A generic AI does not know which card was at hand index 3 or how much Health was lost merely from reading the exported input sequence.
+
+The game's **matching deterministic engine and content** reconstruct those details when importing a verified replay.
+
+## Companion session
+
+The `schatten.web-session/1` file contains human-readable controller names, player/AI type, named loadout selections, AI seed derivation scheme, and matching engine information.
+
+## Recommended storage
+
+Keep original files unchanged, ideally side by side. Use a stable folder name or the `duel_id`; a good playtest report also includes the exact replay step that looked surprising.
+
+<Warning>Completed match records can disclose both wizards' hidden information. Never treat them as secret-free. Unfinished matches may expose additional seed and commitment information.</Warning>
+
+Continue with [replay instructions](/replay/record-and-review) or [AI interpretation limits](/replay/ai-analysis).

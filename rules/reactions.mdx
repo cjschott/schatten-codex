@@ -1,0 +1,35 @@
+---
+title: "Veiled Reactions, declaration and Unseen"
+description: "Understand when SCHATTEN Reactions trigger, leftmost-slot priority, cancellation of Releases, trigger depth limits, and what the Unseen keyword really prevents."
+---
+
+Reactions are cards installed in Schatten slots that wait for an event instead of a fuse timer. They are face-down until they fire or are revealed.
+
+## How a Reaction is triggered
+
+1. A relevant game event happens, such as the opponent declaring a Release or a wizard taking damage.
+2. A Reaction qualifies only if its trigger and filter match and it is not suppressed.
+3. If several of your Reactions qualify for the same event, **only the leftmost** fires.
+4. If both wizards have qualifying Reactions, the **non-active wizard's** resolves first.
+5. The Reaction resolves and moves to the public Record. It does **not** count as a new cast and does not open another declaration window.
+
+Trigger chains have a maximum depth of **3**; events at depth 3 open no additional Reaction triggers.
+
+## Declaration versus damage triggers
+
+The casting pipeline checks opposing declaration triggers before spell effects resolve. A cancellation Reaction such as [Unweave](/cards/unweave) can stop a declared Release, causing the card to go to Record without its effects and clearing the Charge as countered.
+
+An **Unseen** cast skips the *declaration* step. This prevents declaration-triggered reactions such as Unweave, but it does **not** bypass damage and health triggers. Protective effects can still respond to actual damage.
+
+## Prototype examples
+
+- [Ember Ward](/cards/ember-ward) responds to qualifying damage.
+- [Stillwater](/cards/stillwater) responds to a sufficiently expensive opposing cast.
+- [Unweave](/cards/unweave) counters a Release at declaration.
+- [Freeze Frame](/cards/freeze-frame) can suppress an enemy Reaction in Schatten.
+
+## Veil information and bluffing
+
+The opponent sees occupied Schatten slots and public cost/fuse information but not the hidden card identity. Some equipment reveals additional discipline information. Bluffing and playing around the possible response are deliberate strategic choices.
+
+Source: [canonical rules §4.3](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/docs/spec-v0.1.md).
