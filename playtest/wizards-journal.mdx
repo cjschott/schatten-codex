@@ -1,0 +1,41 @@
+---
+title: "Use the Wizard's Journal and send feedback"
+description: "Learn SCHATTEN's browser-local Wizard's Journal categories, note-saving behavior, export options and hosted feedback workflow during prototype duels."
+---
+
+The **Wizard's Journal** is a collapsible corner panel reachable during a SCHATTEN duel without abandoning your match. It contains personal notes and the hosted **Send feedback** view.
+
+## Organize your notes
+
+The four note categories are:
+
+| Category | Suggested use |
+| --- | --- |
+| **Builds** | Record equipment ideas and matchups |
+| **Combos** | Remember effective card sequences |
+| **Counters** | Record reactions and defensive tactics |
+| **Ideas** | Suggest improvements and future features |
+
+A note has a title, a body and optional game context. The implementation permits up to **200 characters in a title** and **200,000 Unicode code points in the note body**.
+
+## Where notes are kept
+
+Journal notes use **browser local storage**, not a cloud account or synchronized database. A note is marked saved only after it has been read back successfully. If another browser tab changed the same note, saving can stop with a conflict rather than overwrite it silently.
+
+Do not assume that clearing site data, changing browsers or changing devices preserves your notes. Export a portable copy when important.
+
+## Feedback is different from notes
+
+Writing a Journal note does **not** submit it to SCHATTEN developers. Use **Send feedback** to send an actual report. The feedback view provides structured categories and may attach a selected Duel Record. The report counts as submitted only when the feedback API confirms the result.
+
+If you attach an unfinished duel, pay attention to the warning: it contains information that is still hidden in live gameplay.
+
+## Suggested workflow
+
+1. Notice a confusing interaction.
+2. Make a short Journal note, including the round and why it was confusing.
+3. Save the Duel Record after the game.
+4. Reopen and verify the replay, finding the exact step.
+5. Send feedback with the step, observation and relevant record.
+
+Source: [Journal UI](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/apps/web/src/ui/Journal.tsx), [Journal storage rules](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/apps/web/src/journal/store.ts) and [Feedback UI](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/apps/web/src/ui/Feedback.tsx).

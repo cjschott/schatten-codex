@@ -1,0 +1,23 @@
+---
+title: "Choose an AI opponent"
+description: "Compare Random Legal, Greedy, ISMCTS Low and ISMCTS High in SCHATTEN's prototype, and understand the provisional default and fixed-seed tests."
+---
+
+SCHATTEN's browser prototype includes four AI opponent configurations. They let you experience different styles of opposition without multiplayer.
+
+| Opponent | What to expect |
+| --- | --- |
+| **Random Legal** | Selects among legal actions; useful for checking unpredictable lines |
+| **Greedy** | Uses a short-horizon action preference; useful as a straightforward baseline |
+| **ISMCTS Low** | Information-set Monte Carlo tree search with a lower search budget; **provisional default** |
+| **ISMCTS High** | Higher search budget, potentially slower turns |
+
+These names describe the agent configurations. Do not assume that higher search budget always means higher win rate in every matchup: the canonical default's strength is still marked **provisional**.
+
+## Reproducibility
+
+The **Opponent loadout** selector lets you choose a fixed preset or a random preset derived from the duel seed. If you leave **Fixed seed** empty, the game creates a random one; reuse a fixed seed with the same players and choices when reproducing an interesting position.
+
+The companion session file captures controller type and named loadout, making it useful when sharing a [Duel Record](/replay/file-reference).
+
+Source: [agent roster](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/apps/web/src/agent/roster.ts) and [setup interface](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/apps/web/src/ui/Setup.tsx).

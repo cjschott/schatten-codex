@@ -1,0 +1,30 @@
+---
+title: "Understand the duel screen"
+description: "Learn to read the SCHATTEN duel interface: player stats, hand, equipment, Schatten slots, card actions, AI turn status and combat log."
+---
+
+The SCHATTEN duel screen shows both wizard panels, the cards in your own hand, legal actions, and a running event log. Learn these surfaces before judging a surprising outcome.
+
+## Wizard panels
+
+Each wizard's panel includes **Health / maximum Health**, **Ward**, **Mana / cap / carry**, **Statuses**, **Charge**, **Hand count / limit**, **Deck count**, **Record count**, equipment, and the ordered **Schatten slots**.
+
+Your own hand shows card names and text. Your opponent's hand count is visible but the card identities are hidden during a live duel.
+
+## How to choose actions
+
+- **Mulligan:** keep the hand or tick specific cards to return and redraw. There are two mulligans per wizard.
+- **Cast:** offered legal choices are grouped with specific modes, targets and branching choices. Pick a button for the intended action.
+- **Veil:** places the card into the leftmost available Schatten slot; wait for fuse or Reaction timing.
+- **Dusk:** after selecting End Turn, if over the hand limit, tick discards or use the game's default most-recently-drawn choice.
+- **AI turn:** an opponent-is-thinking banner appears while its worker decides.
+
+The game does not ask players to enter arbitrary moves. The interface presents legal actions produced by the rules engine.
+
+## Reading the event log
+
+Compare the log after every cast with the panels. If an effect does not make sense, save the match's Duel Record and identify its step in [verified replay](/replay/record-and-review).
+
+The [turn sequence](/rules/turn-structure) explains when Ward expires, status effects tick and Veils activate.
+
+Source: [browser duel interface](https://github.com/cjschott/schatten/blob/a84f128c501788af08a74714b436851b821d3240/apps/web/src/ui/Duel.tsx).
