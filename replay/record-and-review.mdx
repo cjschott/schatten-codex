@@ -1,0 +1,38 @@
+---
+title: "Reopen and review a recorded duel"
+description: "Download a SCHATTEN Duel Record and session file, import them into a new duel, verify the replay, and study specific decisions step by step."
+sidebarTitle: "Replay a duel"
+---
+
+SCHATTEN's deterministic duel records make it possible to inspect what happened after a match. The present browser prototype already supports verified tactical replay, separate from planned cinematics.
+
+<Steps>
+  <Step title="Finish a match">
+    On the result screen choose **Download the Duel Record** and **Download the session file**.
+  </Step>
+  <Step title="Keep the files together">
+    Preserve the original `.duel.json` and `.session.json` files without editing them.
+  </Step>
+  <Step title="Open the replay">
+    Choose **New duel**, then **Open a Duel Record** with both files. The imported replay should report **verified**.
+  </Step>
+  <Step title="Step through the match">
+    Move to the event or decision you want to study. The replay shows full information from both viewpoints. Write down the step number for any confusing play.
+  </Step>
+</Steps>
+
+## What is in a Duel Record?
+
+The `schatten.duel/1` export carries the rules engine and content snapshot identifiers, seed, players' equipment IDs and deck hashes, the ordered inputs, verification hashes, and the outcome. The `events` property in the examined export contains an **event count and hash**, not every expanded event description.
+
+The companion `schatten.web-session/1` file identifies player and AI names, controllers, and loadout selection modes. It provides context that the duel record alone may not make readable.
+
+<Warning>Completed records reveal both players' information. Do not publish private duels without considering that disclosure. An unfinished duel can expose seed and commitment-secret material.</Warning>
+
+## Tactical versus cinematic replay
+
+**Playable now:** verified turn-by-turn reconstruction and stepping through decisions.
+
+**Planned:** rendering the same history as a cinematic wizard battle. The rendered video must not become the authoritative combat record.
+
+For AI interpretation, continue to [analyzing a duel](/replay/ai-analysis).
